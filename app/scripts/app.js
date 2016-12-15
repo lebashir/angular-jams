@@ -22,7 +22,7 @@
     }
     
     angular
-        .module('blocjams', ['ui.router'])
+        .module('blocJams', ['ui.router'])
         .config(config);
             
 })();
