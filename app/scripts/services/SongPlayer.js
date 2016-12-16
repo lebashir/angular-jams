@@ -43,9 +43,18 @@
 * @function playSong
 * @desc play the current audio file (currentBuzzObject) and sets song.playing to true
 */
-        var playSong = function(){
+        var playSong = function() {
             currentBuzzObject.play();
             song.playing = true;
+        }
+/**
+@function stopSong
+@desc stop the current audio file (currentBuzzObject) and set song.playing to null
+*/
+        var stopSong = function() {
+            currentBuzzObject.stop();
+            song.playing = null;
+            
         }
 /**
 */
@@ -84,6 +93,13 @@
                 playSong(song);
             }
         };
+/**
+*/
+        SongPlayer.next = function() {
+            var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+            currentSongIndex++;
+            
+        }
         
         return SongPlayer;
     }
