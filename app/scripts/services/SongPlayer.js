@@ -1,6 +1,6 @@
 (function() {
     function SongPlayer(Fixtures) {
-        var songPlayer = ();
+        var songPlayer = {};
         
         var currentAlbum = Fixtures.getAlbum();
         
