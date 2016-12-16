@@ -25,16 +25,23 @@
             
             currentSong = song;
         };
+/**
+* @function playSong
+* @desc play the current audio file (currentBuzzObject) and sets song.playing to true
+*/
+        var playSong = function(){
+            currentBuzzObject.play();
+            song.playing = true;
+        }
         
         SongPlayer.play = function(song) {
             if (currentSong !== song){
                 
                 setSong(song);
-                currentBuzzObject.play();
+                playSong();
             } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
-                    currentBuzzObject.play();
-                    song.playing - true;
+                    playSong();
                 }
             }
         };
