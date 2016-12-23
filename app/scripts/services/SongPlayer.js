@@ -53,7 +53,7 @@
 * @function playSong
 * @desc play the current audio file (currentBuzzObject) and sets song.playing to true
 */
-        var playSong = function() {
+        var playSong = function(song) {
             currentBuzzObject.play();
             song.playing = true;
         }
@@ -79,7 +79,7 @@
                 setSong(song);
                 playSong(song);
             } else if (SongPlayer.currentSong === song) {
-                if (currentBuzzObject.isPaused()) {
+                if (currentBuzzObject && currentBuzzObject.isPaused()) {
                     playSong(song);
                 }
             }
@@ -132,10 +132,14 @@
             }
         };
         
+        SongPlayer.setVolume = function() {
+            
+        }
+        
         return SongPlayer;
     }
     
     angular
         .module('blocJams')
-        .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer);
+        .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
 })();
