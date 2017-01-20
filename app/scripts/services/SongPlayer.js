@@ -22,7 +22,6 @@
                 formats: ['mp3'],
                 preload: true
             });
-            git 
             currentBuzzObject.bind('timeupdate', function() {
                 $rootScope.$apply(function() {
                     SongPlayer.currentTime = currentBuzzObject.getTime();
