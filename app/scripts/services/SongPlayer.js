@@ -50,6 +50,11 @@
 */
         SongPlayer.currentTime = null;
 /**
+@Desc Current Volume of player
+@type (number) (0-100)
+*/
+        SongPlayer.volume = null;
+/**        
 * @function playSong
 * @desc play the current audio file (currentBuzzObject) and sets song.playing to true
 */
@@ -132,9 +137,11 @@
             }
         };
         
-        SongPlayer.setVolume = function() {
-            
-        }
+        SongPlayer.setVolume = function(volume) {
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(volume);
+            }
+        };
         
         return SongPlayer;
     }
