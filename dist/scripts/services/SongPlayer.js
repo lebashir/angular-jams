@@ -110,7 +110,7 @@
             if (currentSongIndex < 0) {
                 stopSong();
             } else {
-                var song = currentALbum.song[currentSongIndex];
+                var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
             }
@@ -120,8 +120,15 @@
         SongPlayer.next = function() {
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
             currentSongIndex++;
-            if (currentSongIndex > currentAlbum.song.length -1) {
+            if (currentSongIndex > currentAlbum.songs.length -1) {
                 currentSongIndex = 0;
+                setSong(currentAlbum.songs[0]);
+                playSong(currentAlbum.songs[0]);
+    
+            } else {
+                var song = currentAlbum.songs[currentSongIndex]
+                setSong(song);
+                playSong(song);
             }
             
         }
